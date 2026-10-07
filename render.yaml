@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: aegisai-cyber-defense
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --chdir backend server:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
